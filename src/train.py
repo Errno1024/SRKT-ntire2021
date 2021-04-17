@@ -85,7 +85,7 @@ else:
         torch.distributed.init_process_group(backend='gloo')
     device = torch.device("cpu")
 
-batch_size = 5
+batch_size = 15
 epochs = 400
 train_mode = 100
 iteration = 100
@@ -99,8 +99,6 @@ alpha = 1 # L1
 beta = 0.3  # Laploss
 gamma = 0.5 # Lab L2
 delta = 1 # KT
-
-batch_size *= args.gpus
 
 model.to(device)
 
