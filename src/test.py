@@ -29,7 +29,7 @@ def main(args):
     checkpoint = "SRKT.pkl"
     tset = testset(args.dataset, verbose=True)
 
-    model.load_state_dict(torch.load(checkpoint))
+    model.load_state_dict(torch.load(checkpoint)['model'])
 
     model = Wrapper(model)
     model.eval()
