@@ -143,7 +143,7 @@ if not train_teacher:
     Log('loading teacher')
 
     model_teacher = Teacher()
-    model_teacher.load_state_dict(torch.load(f'checkpoints/{model_teacher_name}', map_location='cpu'))
+    model_teacher.load_state_dict(torch.load(f'checkpoints/{model_teacher_name}', map_location='cpu')['model'])
     model_teacher.to(device)
     model_teacher.eval()
 
